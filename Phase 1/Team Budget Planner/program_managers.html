@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Managers</title>
+    <script src="budget_storage.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">    
+<style>
+    form{
+        margin: 20px;
+    }
+    h3{
+        background-color:cadetblue ;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    #back{
+        color:aliceblue ;
+    }
+</style>
+</head>
+<body>
+    <nav class="nav justify-content-center">
+        <span class="nav-item">
+            <h3>Program Manager Portal</h3>
+        </span>
+    </nav>
+    <div class="shadow p-3 mb-5 bg-light rounded"> 
+        <h4>Add New Budget</h4>  
+    </div>
+    <form onsubmit="StoreData()">
+        <div class="form-group row">
+            <label for="cName" class="col-sm-2 col-form-label">Client Name:</label> 
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="cName" placeholder="Client Name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="pName" class="col-sm-2 col-form-label">Project Name:</label> <br/>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="pName" placeholder="Project Name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="budget" class="col-sm-2 col-form-label">Budget:</label> 
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="budget" placeholder="Budget">
+            </div>
+        </div>
+        <button type="submit" class="offset-sm-2 btn btn-success">Add Data</button>
+        <button type="reset" class="btn btn-success">Clear</button>
+        <button type="submit" class="btn btn-danger" onclick="DeleteData()">Reset Data</button>
+    </form>
+    <button type="button"  class="offset-sm-1 btn btn-dark"><a id="back" href="index.html">Back</a></button>
+</body>
+</html>

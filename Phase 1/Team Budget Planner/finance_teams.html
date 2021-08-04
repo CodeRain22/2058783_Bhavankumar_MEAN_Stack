@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Teams</title>
+    <script src="budget_storage.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">    
+<style>
+     #back{
+        color:aliceblue ;
+    }
+    #total{
+        font-size: larger;
+        color:black;
+        font-style: oblique;
+        margin-left: 5px;
+        margin-bottom: 20px;
+    }
+    h3{
+        background-color:cadetblue ;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body onload="GetData()">
+    <nav class="nav justify-content-center">
+        <span class="nav-item">
+            <h3>Finance Teams Portal</h3>
+        </span>
+    </nav>
+    <div class="shadow p-3 mb-5 bg-light rounded"> 
+        <h4>Annual Budget</h4>  
+    </div>
+    <div  class="shadow p-3 mb-5 bg-light rounded" id="main">
+    </div>
+    <div  id="total">
+    </div>
+    <button type="button"  class="offset-sm-1 btn btn-dark"><a id="back" href="index.html">Back</a></button>
+</body>
+</html>
