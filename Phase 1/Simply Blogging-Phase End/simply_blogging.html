@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply Blogging</title>
+    <link rel="icon" href="sb.png" type="image/gif" sizes="16x16">
+    <script src="simply_blogging_dom.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+    #blogForm{
+        margin: 20%;
+        margin-top: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+    #blogs{
+        padding: 10px; 
+        justify-content:center ;
+    }
+    </style>
+</head>
+<body style="background-color: cadetblue;" >
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="sb.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Simply Blogging
+          </a>
+        <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </nav>
+      <form id="blogForm" class="bg-secondary  text-white">
+        
+        <div class="form-group">
+          <label for="title">Title: </label>
+          <input type="text" class="form-control" id="title" placeholder="Title of Blog" required>
+        </div>
+        <div class="form-group">
+          <label for="article">Article:</label>
+          <textarea class="form-control" id="article" rows="3" placeholder="Article Info" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="image">Image: </label>
+            <input type="url" class="form-control" id="image" placeholder="Image of Blog" required>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="addBlog()">Add Blog</button>
+      </form>
+    <div id="blogs" class="row align-items-center">
+
+    </div>
+</body>
+</html>
