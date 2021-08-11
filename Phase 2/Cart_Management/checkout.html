@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoppingCart.Com</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">    
+    <link rel="icon" href="icon.jpg" type="image/gif" sizes="16x16">
+    <script src="cart_managment.js"></script>
+</head>
+<body onload="getvalues()" >
+    <nav class="navbar navbar-light bg-light ">
+        <a class="navbar-brand font-weight-bold text-success" href="index.html">
+            <img src="icon.jpg" width="50" height="50" alt=""> ShoppingCart.Com
+        </a>
+        <form class="form-inline my-2 my-lg-0">
+            <a class="nav-link active text-monospace font-weight-bold" href="#">Account </a>
+            <a class="nav-link active text-monospace font-weight-bold" href="#">Orders </a>
+            <a class="nav-link active text-monospace font-weight-bold" href="#">Returns</a>
+            <input class="form-control mr-sm-2" type="text" placeholder="Search Products" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+    <nav class="navbar navbar-light bg-dark justify-content-center">         
+        <h3><a class="nav-link text-monospace text-light font-weight-bold" href="checkout.html">Checkout</a></h3>
+    </nav>
+    <div id="checkout"  style="padding:500px; padding-top: 20px;padding-bottom: 20px;" class="text-center  font-weight-bold">
+    </div>
+    <h3>
+        <div id="total" class="text-center text-monospace font-weight-bold"></div>
+    </h3>
+    
+    <ul class="nav justify-content-center" >
+        <li style="margin: 20px;">
+            <button type="button" class="btn btn-success">Pay Now</button>
+        </li>
+        <li style="margin: 20px;">
+            <a href="index.html">
+            <button type="button" class="btn btn-primary">Shop More</button></a>
+        </li>  
+        <li style="margin: 20px;">
+            <button type="button" class="btn btn-primary" onclick="clears()">Clear Cart</button>
+        </li>  
+    </ul>          
+</body>
+</html>

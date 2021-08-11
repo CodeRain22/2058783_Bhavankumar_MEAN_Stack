@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoppingCart.Com</title>
+    <script src="cart_managment.js"></script>
+    <link rel="icon" href="icon.jpg" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">    
+</head>
+<body onload="getItemCount()" style="background-color: lightgray;">
+    <nav class="navbar navbar-light bg-light ">
+        <a class="navbar-brand font-weight-bold text-success" href="#">
+            <img src="icon.jpg" width="50" height="50" alt=""> ShoppingCart.Com
+        </a>
+        <form class="form-inline my-2 my-lg-0">
+            <a class="nav-link active text-monospace font-weight-bold" href="#">Sign in </a>
+            <a class="nav-link active text-monospace font-weight-bold" href="#">Account </a>
+            <a class="nav-link active text-monospace font-weight-bold" href="#">Orders </a>
+            <a class="nav-link active text-monospace font-weight-bold" href="#">Returns</a>
+            <input class="form-control mr-sm-2" type="text" placeholder="Search Products" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+    <nav class="navbar navbar-light bg-dark ">
+        <ul class="nav">
+            <li class="active text-monospace font-weight-bold">
+                <a class="nav-link text-monospace text-light " href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active text-monospace font-weight-bold">
+                <a class="nav-link text-monospace text-light " href="#">Services</a>
+            </li>
+            <li class="active text-monospace font-weight-bold">
+                <a class="nav-link text-monospace text-light " href="#">Daily Deals</a>
+            </li>
+        </ul>
+        <div class="active text-monospace font-weight-bold form-inline" >
+            <a class="nav-link text-monospace text-primary " href="checkout.html">Checkout</a> 
+            <a class="nav-link text-monospace text-primary " href="checkout.html">Cart 
+            <img src="cart.png" width="30" height="30"  alt="" > :</a>
+            <div id="cart_number" class="text-light btn btn-primary">0</div>
+        </div>
+    </nav>
+    <h2 class="text-monospace" style="padding: 1%;">Hello, Valued Customer!</h2>
+    <div class="shadow p-3 mb-5 bg-light rounded text-center">  
+        <h3>Shop our popular products and get more Discount!</h3> 
+    </div>
+    <div class="card-deck justify-content-center">
+        <div class="card col-2">
+            <div class="card-body ">
+                <script>
+                    var item1name="Laptop"
+                    var item1price=1000;
+                </script>
+                <h4 class="shadow-lg mb-3 card-title rounded">Laptop</h4>
+                <h4><span class="badge badge-secondary">$1000</span></h4>
+                <h5 class="card-text" style="width: 500px;height: 150px;">
+                    Intel i7 11th Gen.<br>16 GB Ram.<br> 512 GB M2 SSD.
+                </h5>
+                <button type="button" class="btn btn-dark" onclick="addItem(item1name,item1price)">Add to cart</button>
+            </div>
+        </div>
+        <div class="card  col-2">
+            <div class="card-body">
+                <script>
+                    var item2name="Mobile"
+                    var item2price=500;
+                </script>
+                <h4 class="shadow-lg mb-3 card-title rounded">Mobile</h4>
+                <h4><span class="badge badge-secondary">$500</span></h4>
+                <h5 class="card-text" style="width: 500px;height: 150px;">
+                    Iphone X.<br>512 GB Storage.<br>12 MP Dual Camera. 
+                </h5>
+                <button type="button" class="btn btn-dark" onclick="addItem(item2name,item2price)">Add to cart</button>
+            </div>
+        </div>
+        <div class="card  col-2" >
+            <div class="card-body">
+                <script>
+                    var item3name="Perfume"
+                    var item3price=20;
+                </script>
+                <h4 class="shadow-lg mb-3 card-title rounded">Perfume</h4>
+                <h4><span class="badge badge-secondary">$20</span></h4>
+                <h5 class="card-text" style="width: 500px;height: 150px;">
+                    Dior SAUVAGE.<br>Instantly recognizable.<br> Spray 2.0 oz.
+                </h5>
+                <button type="button" class="btn btn-dark" onclick="addItem(item3name,item3price)">Add to cart</button>
+            </div>
+        </div>
+        <div class="card  col-2">
+            <div class="card-body">
+                <script>
+                    var item4name="Helmet"
+                    var item4price=15;
+                </script>
+                <h4 class="shadow-lg mb-3 card-title rounded">Helmet</h4>
+                <h4><span class="badge badge-secondary">$15</span></h4>
+                <h5 class="card-text" style="width: 500px;height: 150px;">
+                    Adult Cycling Bike Helmet.<br/>Adjustable Lightweight.<br>Avilable in 18 Colors
+                </h5>
+                <button type="button" class="btn btn-dark" onclick="addItem(item4name,item4price)">Add to cart</button>
+            </div>
+        </div>
+          
+    </div>    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
