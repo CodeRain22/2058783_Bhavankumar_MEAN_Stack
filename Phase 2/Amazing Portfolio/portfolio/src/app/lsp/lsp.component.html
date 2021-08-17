@@ -1,0 +1,76 @@
+<h2 [ngClass]="'navbar'">UserProfile.com</h2>
+
+<div *ngIf="loginFlag"   id="login" [ngClass]="'page'">  
+    <h3>Login </h3>
+    <form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)" [ngClass]="'from'">
+        <label for="user">Username:</label>
+        <input type="text" name="user" id="user" ngModel required>
+        <br><br>
+        <label for="pass">Password:</label>
+        <input type="password" name="pass" id="pass" ngModel required>
+        <br><br>
+        <input type="submit" value="Submit"  [disabled]="loginRef.invalid" [ngClass]="'button'">
+        <input type="reset" value="Reset" [ngClass]="'button'">
+    </form>
+    {{loginmsg}}
+    <br>
+    <label for="newUser">New User? Sign Up Now: </label>
+    <input type="button" value="Sign Up" (click)="disableLogin()" [ngClass]="'button'">
+    <br><br>
+</div>
+
+<div *ngIf="signupFlag" [ngClass]="'page'">
+    <h3>Sign Up</h3>
+    <form #signupRef="ngForm" (ngSubmit)="addUser(signupRef)" [ngClass]="'from'">
+        <label for="fn">First name:</label>
+        <input type="text" name="fn"  ngModel required>
+        <br><br>
+        <label for="ln">Last name:</label>
+        <input type="text" name="ln" id="ln"  ngModel required>
+        <br><br>
+        <label for="un">Username:</label>
+        <input type="text" name="un" id="un"  ngModel required>
+        <br><br>
+        <label for="p">Password:</label>
+        <input type="password" name="p" id="p"  ngModel required>
+        <br><br>
+        <input type="submit" value="Submit"  [disabled]="signupRef.invalid" [ngClass]="'button'">
+        <input type="reset" value="Reset" [ngClass]="'button'">
+    </form>
+    <br><br>
+    <label for="exUser">Existing User? Sign In Now: </label>
+    <input type="button" value="Back to Login" name="exUser" (click)="disableSignUpandPort()" [ngClass]="'button'"> 
+    <br><br>
+</div>
+
+<div *ngIf="portfolioFlag" id="portfolio"  [ngClass]="'page'">
+    <h2>User Portfolio</h2>
+    <h3>Wlecome {{loggedPersonName}}</h3>
+    <h4>Please Enter the Contacts Details:</h4>
+    <form [ngClass]="'from'" #portfolioRef="ngForm" (ngSubmit)="addContacts(portfolioRef)">
+        <label for="contact_name">Contact No:</label>
+        <input type="text" name="contact_name" ngModel required>
+        <br><br>
+        <label for="phone">Phone No:</label>
+        <input type="tel" name="phone" ngModel required>
+        <br><br>
+    <input type="submit" value="Save" [disabled]="portfolioRef.invalid" [ngClass]="'button'">
+    <input type="button" value="Show Contacts" (click)="showContacts()" [ngClass]="'button'">
+    <input type="button" value="Sign Out" (click)="disableSignUpandPort()" [ngClass]="'button'"> 
+    </form>
+    <br><br>
+    <div *ngIf="showtableFlag"  [ngClass]="'tableContainer'">
+        <table  [ngClass]="'tableClass'" >
+            <tr>
+                <th [ngClass]="'tableClass'">Name</th>
+                <th [ngClass]="'tableClass'">Phone No.</th>
+            </tr>
+            <tr *ngFor="let con of contact">
+                <td [ngClass]="'tableClass'">{{con.name}}</td>
+                <td [ngClass]="'tableClass'">{{con.phone}}</td>
+            </tr>
+        </table>
+    </div>
+    {{portfolioMsg}}
+</div>
+<h2 [ngClass]="'footer'">About-us Contact-us Gallery</h2>
