@@ -1,0 +1,76 @@
+
+<p>
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Task Tracker</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
+  </p>
+  <mat-grid-list cols="4" rowHeight="150" style="margin-top: 20px; ">
+    <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="5"
+        [style.background]="'white'" >
+        <div>
+          <h1>To Do Tasks</h1>
+          <form #taskRef="ngForm" (ngSubmit)="addTask(taskRef)">
+            <mat-form-field>
+              <mat-label>Id:</mat-label>
+              <input matInput name="id" ngModel required/>
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>Name:</mat-label>
+              <input matInput name="name" ngModel required/>
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>Task:</mat-label>
+              <input matInput name="taskname" ngModel required/>
+            </mat-form-field><br>
+            <mat-form-field appearance="fill">
+              <mat-label>Dead Line:</mat-label>
+              <input matInput [matDatepicker]="picker" name="deadline" ngModel required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field><br>
+            <button type="submit" mat-raised-button color="primary" style="margin-right: 12px;" [disabled]=!taskRef.valid>Add Task</button>
+            <button type="reset" mat-raised-button style="background-color: bisque;">Reset</button>
+          </form>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile
+    [colspan]="3"
+    [rowspan]="4"
+    [style.background]="'white'"
+    style=" overflow-y: auto;">
+    <div class="mat-elevation-z8 demo-table">
+      <br>
+      <h2 style="text-align: center;padding: 10px;">To-do-List</h2>
+    <table  style="width: 100%; border: 1px solid royalblue;">
+        <tr>
+          <th  [ngClass]="'tableClass'">No.</th>
+          <th  [ngClass]="'tableClass'">Employee Id.</th>
+          <th  [ngClass]="'tableClass'">Name.</th>
+          <th [ngClass]="'tableClass'">Task.</th>
+          <th [ngClass]="'tableClass'">Deadline</th>
+      </tr>
+      <tr *ngFor="let con of tasks">
+          <td [ngClass]="'tableClass'">{{con.position}}</td>
+          <td  [ngClass]="'tableClass'">{{con.id}}</td>
+          <td [ngClass]="'tableClass'">{{con.name}}</td>
+          <td [ngClass]="'tableClass'">{{con.task}}</td>
+          <td [ngClass]="'tableClass'">{{ con.deadLine | date:'medium' }} </td>
+      </tr>
+    </table>
+  </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  
+
