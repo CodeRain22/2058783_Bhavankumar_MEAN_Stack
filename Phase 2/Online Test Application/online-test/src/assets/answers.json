@@ -1,0 +1,42 @@
+[
+    {
+        "que":"1.Angular Js is based on",
+        "answer":"MVVM Architectural pattern"
+    },
+    {
+        "que":"2.Which directive initializes an AngularJS application?",
+        "answer":"ng-app"
+    },
+    {
+        "que":"3.Which of following is not valid AngularJs Filter",
+        "answer":"email"
+    },
+    {
+        "que":"4.Which Angular directive is used to binds the value of HTML controls (input, select, textarea) to application data?",
+        "answer":"ng-model"
+    },
+    {
+        "que":"5.How do you share data between controller and view?",
+        "answer":"using services"
+    },
+    {
+        "que":"6.What is $routeProvider?",
+        "answer":"A service"
+    },
+    {
+        "que":"7.Angular 1.x is written in",
+        "answer":"Javascript"
+    },
+    {
+        "que":"8.Which Angular Directive is used to disable an Element?",
+        "answer":"ng-disabled"
+    },
+    {
+        "que":"9.AngularJS directives are used in ____________",
+        "answer":"View"
+    },
+    {
+        "que":"10.AngularJS directives can be written in Templates as",
+        "answer":"All of the above"
+    }
+]

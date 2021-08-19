@@ -1,0 +1,94 @@
+[
+    {
+        "que":"1.Angular Js is based on",
+        "option1":"MVC Architecture",
+        "option2":"Decorator pattern",
+        "option3":"MVVM Architectural pattern",
+        "option4":"Observer Pattern",
+        "status":""
+   
+    },
+    {
+        "que":"2.Which directive initializes an AngularJS application?",
+        "option1":"ng-init",
+        "option2":"ng-app",
+        "option3":"ngSrc",
+        "option4":"ng-start",
+        "status":""
+     
+    },
+    {
+        "que":"3.Which of following is not valid AngularJs Filter",
+        "option1":"lowercase",
+        "option2":"orderby",
+        "option3":"email",
+        "option4":"currency",
+        "status":""
+     
+    },
+    {
+        "que":"4.Which Angular directive is used to binds the value of HTML controls (input, select, textarea) to application data?",
+        "option1":"ng-cloak",
+        "option2":"ng-bind",
+        "option3":"ng-model",
+        "option4":"ng-blur",
+        "status":""
+     
+    },
+    {
+        "que":"5.How do you share data between controller and view?",
+        "option1":"using Model",
+        "option2":"using services",
+        "option3":"using factory",
+        "option4":"using $scope",
+        "status":""
+     
+    },
+    {
+        "que":"6.What is $routeProvider?",
+        "option1":"A service",
+        "option2":"A module",
+        "option3":"A component",
+        "option4":"None",
+        "status":""
+     
+    },
+    {
+        "que":"7.Angular 1.x is written in",
+        "option1":"Java",
+        "option2":"Javascript",
+        "option3":"TypeScript",
+        "option4":"C++",
+        "status":""
+     
+    },
+    {
+        "que":"8.Which Angular Directive is used to disable an Element?",
+        "option1":"ng-disabled",
+        "option2":"ng-hide",
+        "option3":"ng-false",
+        "option4":"ng-true",
+        "status":""
+     
+    },
+    {
+        "que":"9.AngularJS directives are used in ____________",
+        "option1":"Module",
+        "option2":"Controller",
+        "option3":"Service",
+        "option4":"View",
+        "status":""
+     
+    },
+    {
+        "que":"10.AngularJS directives can be written in Templates as",
+        "option1":"Tag",
+        "option2":"Attribute",
+        "option3":"Class name",
+        "option4":"All of the above",
+        "status":""
+     
+    }
+
+
+]

@@ -1,0 +1,36 @@
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+    font-family: cursive;
+
+  }
+  
+.main{
+    margin-left: 1%;
+    padding: 20px;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  
+  }
+  .status{
+      font-weight: bold;
+      font-style: italic;
+      color: green;
+      font-family: cursive;
+  }
+  .question{
+      font-family: cursive;
+      font-weight: bolder;
+  }
+  .result{
+    font-family: cursive;
+    font-weight: bolder;
+    color: red;
+
+  }

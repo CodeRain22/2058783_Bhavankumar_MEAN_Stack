@@ -1,0 +1,46 @@
+<p>
+    <mat-toolbar>
+     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span style="font-family:cursive;">Quiz Master</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+     <mat-icon>share</mat-icon>
+   </button>
+  </mat-toolbar>
+  </p>
+    <div [ngClass]="'main'">
+        <h1 style="text-align: center; font-family: cursive;">Angular-Quiz</h1>
+        <hr>
+        <form [formGroup]="testForm" (ngSubmit)="submit()">
+            <div *ngFor="let q of allQuestions">
+                <label id="example-radio-group-label" class="question">{{q.que}}</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label"  class="example-radio-group" formControlName={{q.que}} >
+                    <mat-radio-button  class="example-radio-button"  value={{q.option1}}>{{q.option1}}</mat-radio-button>
+                    <mat-radio-button  class="example-radio-button"  value={{q.option2}}>{{q.option2}}</mat-radio-button>
+                    <mat-radio-button  class="example-radio-button"  value={{q.option3}}>{{q.option3}}</mat-radio-button>
+                    <mat-radio-button  class="example-radio-button"  value={{q.option4}}>{{q.option4}}</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="resultFlag" [ngClass]="'status'">
+                    {{q.status}}
+                </div>
+            </div>
+            <div style="text-align: center;">
+            <hr>
+            <button type="submit"  mat-raised-button [disabled]="submitFlag" color="warn">Submit</button>
+            </div>
+        </form>
+        <br>
+        <div style="text-align: center;">
+        <button type="submit"  mat-raised-button  color="primary" (click)="reviewAndResult()"  [disabled]="!submitFlag">Review & Result</button>
+        </div>
+        <br>
+        <div *ngIf="resultFlag" [ngClass]="'result'">
+            {{resultMessage }}
+        </div>
+    </div>
+   
