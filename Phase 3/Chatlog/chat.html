@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+      .chatbox {
+        width: 700px;
+        height: 600px;
+        border-radius: 5%;
+        border: 5px solid;
+        overflow: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2%;
+      }
+
+      .chat {
+        width: 650px;
+        height: 400px;
+        border-radius: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+        border: 5px solid gray;
+        margin-top: 2%;
+        overflow: auto;
+      }
+
+      h5 {
+        margin-left: 8%;
+        padding: 2%;
+      }
+
+      .msgbox {
+        width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      button {
+        margin-top: 2%;
+      }
+    </style>
+    <!-- Connectiing library file of module folder -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript"> var socket=io();
+       function getname(){
+        document.getElementById("name").value;
+        document.getElementById("welcomeTag").innerHTML="Hello! "+document.getElementById("name").value;;
+        socket.emit("name1",document.getElementById("name").value);
+        document.getElementById("myForm").reset();
+    }
+
+        function getmsg()
+        {
+            var today = new Date();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var cmessages=document.getElementById("clientMSG").value;
+            socket.emit("obj",cmessages);
+            var subTag=document.createElement("sub");
+            var subTagCon= document.createTextNode("("+time+")");
+            subTag.appendChild(subTagCon);
+            var cTag = document.createElement("h6");
+            var cTagContent = document.createTextNode(cmessages);
+            cTag.setAttribute("style","text-align: right;padding: 3%;"); 
+            cTag.appendChild(cTagContent);
+            cTag.appendChild(subTag);
+            document.getElementById("csm").appendChild(cTag);
+            document.getElementById("myForm2").reset();
+        
+        }  
+        socket.on("obj1",(msg)=>{
+
+            var sTag = document.createElement("h6");
+            var sTagContent = document.createTextNode(msg.MSG);
+            sTag.setAttribute("style","padding: 3%;"); 
+            sTag.appendChild(sTagContent);
+            var subTag=document.createElement("sub");
+            var subTagCon= document.createTextNode("("+msg.TIME+")");
+            subTag.appendChild(subTagCon);
+            sTag.appendChild(subTag);
+            document.getElementById("csm").appendChild(sTag);
+        })
+ 
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Chat Support System</a>
+      </div>
+    </nav>
+    <form id="myForm">
+      <div class="col-3" style="margin-bottom: 3%; padding: 2%;">
+        <input type="text" class="form-control" id="name" placeholder="Please Enter Your Name Here!">
+        <button type="button" class="btn btn-primary" onclick="getname()">Send</button>
+      </div>
+    </form>
+    <div class="chatbox bg-dark">
+      <h5 id="welcomeTag" style="text-align: left; color: aliceblue;">Hello!</h5>
+      <div class="chat" id="csm"></div>
+      <br>
+      <div class="msgbox">
+        <form id="myForm2">
+          <div class="col-auto" style="margin-bottom: 3%;">
+            <input type="text" class="form-control" id="clientMSG" placeholder="Type message here" >
+            <button type="button" class="btn btn-primary" onclick="getmsg()">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
